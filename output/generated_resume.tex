@@ -14,7 +14,7 @@
     colorlinks=true,
     linkcolor=black,
     filecolor=magenta,      
-    urlcolor=black,
+    urlcolor=blue,
 }
 
 % --- Custom Section Title ---
@@ -25,13 +25,13 @@
 % --- Macros for Experience Headers ---
 \newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=*, label={}]}
 \newcommand{\resumeEntryEnd}{\end{itemize}}
-\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeItem}[1]{\item{#1 \vspace{-2pt}}}
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textit{#3} & \textit{#4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -42,7 +42,7 @@
     \textbf{\Huge Aryan Walia} \\ \vspace{4pt}
     \small +91 7678531784 $|$ 
     \href{mailto:ariyanwaliya@gmail.com}{ariyanwaliya@gmail.com} $|$ 
-            \href{LINKEDIN\_URL\_PLACEHOLDER}{LinkedIn}  $|$             \href{MEDIUM\_URL\_PLACEHOLDER}{Medium}     \end{center}
+            \href{https://aryanw.in}{Portfolio}  $|$             \href{https://www.linkedin.com/in/aryanw/}{LinkedIn}  $|$             \href{https://medium.com/@aryanwalia}{Medium}     \end{center}
 
 \vspace{-10pt}
 \begin{center}
@@ -56,29 +56,30 @@
       {E SOLUTIONS}{Noida, Delhi}
       {Backend Developer}{Jan 2025 -- Present}
       \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
-                \resumeItem{Built a high-concurrency appointment dispatch system for VUC using Redis atomic locks and optimized SQL transactions, achieving sub-50ms latency and eliminating race conditions under load.}
-                \resumeItem{Designed a scalable data ingestion architecture (500GB+ healthcare datasets) using Airflow, Iceberg, and Trino for optimized OLAP querying over compressed parquet files.}
+                \resumeItem{Built a \textbf{high-concurrency} appointment dispatch system for VUC using Redis atomic locks and optimized SQL transactions, achieving \textbf{sub-50ms latency} and \textbf{eliminating race conditions} under load.}
+                \resumeItem{Designed a scalable \textbf{data ingestion architecture (500GB+)} using Airflow, Iceberg, and Trino for optimized OLAP querying over \textbf{compressed parquet files}.}
+                \resumeItem{Engineered a plug-and-play Identity Provider using Bun \& ElysiaJS with \textbf{passwordless WebAuthn}, stateless RS256 JWT + JWKS verification, Redis-backed challenge management, and \textbf{real-time geo-aware session revocation}.}
               \end{itemize}
         \resumeSubheading
-      {CMS AND APPOINTMENT BOOKING WEBSITE}{Remote}
+      {CMS AND APPOINTMENT BOOKING WEBSITE}{\href{https://acharyarajesh.space}{Remote}}
       {Freelance Full Stack Developer}{Feb 2026 -- Present}
       \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
-                \resumeItem{Delivered a production-ready content management platform end-to-end under tight timelines, architecting a secure Admin Dashboard that streamlined the publishing workflow and enabled management of 10,000+ content pieces at launch.}
-                \resumeItem{Built an automated GenAI pipeline for real-time vernacular translation and structured metadata extraction, reducing manual editorial effort by \textasciitilde{}90\% and significantly accelerating global content rollout.}
+                \resumeItem{Delivered a \textbf{production-ready content management platform} end-to-end under tight timelines, architecting a secure Admin Dashboard that streamlined the publishing workflow and enabled management of \textbf{10,000+ content pieces} at launch.}
+                \resumeItem{Built an automated GenAI pipeline for \textbf{real-time vernacular translation} and structured metadata extraction, \textbf{reducing manual editorial effort by 90\%} and significantly accelerating global content rollout.}
               \end{itemize}
         \resumeSubheading
       {TICKETING AND SUPPORT SYSTEM}{Remote}
       {Freelance Backend Developer}{Oct 2025 -- Nov 2025}
       \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
-                \resumeItem{Built a scalable, multi-tenant ticketing system with RBAC and automated assignment using Node.js, Express, MongoDB, Redis, BullMQ, serving 200–250 users across 5+ teams.}
-                \resumeItem{Engineered a real-time notification and messaging pipeline using Redis Pub/Sub, Socket.io, PostgreSQL, handling 10k+ concurrent requests/min with horizontal scalability.}
+                \resumeItem{Built a \textbf{scalable, multi-tenant ticketing system} with RBAC and automated assignment using Node.js, Express, MongoDB, Redis, BullMQ, serving \textbf{200–250 users across 5+ teams}.}
+                \resumeItem{Engineered a \textbf{real-time notification and messaging pipeline} using Redis Pub/Sub, Socket.io, PostgreSQL, handling \textbf{10k+ concurrent requests/min} with horizontal scalability.}
               \end{itemize}
     \resumeEntryEnd
 
 % --- SKILLS (Simplified for now) ---
 \section{SKILLS}
 \resumeEntryStart
-    \item \small
+    \item
             \textbf{Backend Development:} Node.js, Django, REST APIs, Microservices, Event-Driven Architecture \\
             \textbf{Frontend Development:} React, Next.js \\
             \textbf{Databases:} PostgreSQL, MySQL, MongoDB, Redis, Tarantool \\
@@ -94,13 +95,16 @@
 \resumeEntryStart
         \item
         \textbf{System Design Articles} \\
-        \small Articles talking about system design of real-time video conferencing apps like Zoom, rate limiters, and design patterns like the transaction outbox pattern. \vspace{3pt}
+        Articles talking about system design of \href{https://medium.com/@ariyanwaliya/video-calling-platform-system-design-zoom-c94a48cca205}{real-time video conferencing apps} like Zoom, \href{https://medium.com/@ariyanwaliya/from-fairness-to-security-building-a-rate-limiter-a3623c4828de}{rate limiters}, \href{https://medium.com/@ariyanwaliya/50-iphones-100k-users-and-one-very-angry-database-designing-flash-sales-5a5c3a1cd8b0}{flash sale problem}, \href{https://medium.com/@ariyanwaliya/intent-queries-and-subscriptions-a-better-mental-model-for-analytics-uis-30b1380cd932}{designing modern dashboards} and much more .. \vspace{3pt}
         \item
         \textbf{Database Deep Dive Series} \\
-        \small Wrote articles talking about database discussions like OLTP vs OLAP, B Trees vs LSM trees, cockroachDB, TarantoolDB, MVCC, and much more. \vspace{3pt}
+        Wrote articles talking about database discussions like \href{https://medium.com/@ariyanwaliya/oltp-vs-olap-breaking-down-transactional-vs-analytical-systems-5a6850ddeacd}{OLTP vs OLAP}, \href{https://medium.com/@ariyanwaliya/from-reads-to-writes-understanding-b-trees-vs-lsm-trees-8eb494415152}{B Trees vs LSM trees}, \href{https://medium.com/@ariyanwaliya/inside-cockroachdb-the-engineering-behind-serializable-transactions-8d2946e2de2c}{CockroachDB}, \href{https://medium.com/@ariyanwaliya/somewhere-between-redis-and-postgres-tarantooldb-adcc1dc6bdd4}{TarantoolDB}, \href{https://medium.com/@ariyanwaliya/inside-postgresql-mvcc-internals-page-bloat-autovacuum-and-vacuum-full-mechanics-b63a81dcb4c9}{MVCC}, and much more. \vspace{3pt}
         \item
         \textbf{Finetuning Llama} \\
-        \small Fine-tuned the LLaMA 2 7B pretrained model using parameter-efficient techniques such as LoRA and QLoRA on an SQL dataset, following meticulous preprocessing to align the data with LLaMA's input requirements. \vspace{3pt}
+        Fine-tuned the LLaMA 2 7B pretrained model using parameter-efficient techniques such as LoRA and QLoRA on an SQL dataset, following meticulous preprocessing to align the data with LLaMA's input requirements. \vspace{3pt}
+        \item
+        \textbf{Data Engineering and AI Articles} \\
+        Articles that explore production grade data engineering and AI pipelines built for scale, wrote articles on \href{https://medium.com/@ariyanwaliya/scaling-vector-search-a-practical-comparison-of-ann-techniques-972a9becb2fc}{ANN algoritms at scale}, \href{https://medium.com/@ariyanwaliya/lessons-from-the-trenches-scaling-analytics-with-trino-17b70e1e3197}{Trino} to query files on blob, \href{https://medium.com/@ariyanwaliya/why-netflix-didnt-use-a-graph-database-building-a-real-time-distributed-graph-from-first-df194c564b3d}{building distributed graphs at scale}, and much more. \vspace{3pt}
     \resumeEntryEnd
 
 % --- EDUCATION ---
@@ -110,7 +114,7 @@
       {GURU GOBIND SINGH INDRAPRASTHA UNIVERSITY (GGSIPU)}{}
       {Bachelor of Technology}{June 2025}
       \begin{itemize}[leftmargin=0.15in, label={}]
-          \item \small Cumulative CGPA: 8.5
+          \item Cumulative CGPA: 8.5
       \end{itemize}
     \resumeEntryEnd
 

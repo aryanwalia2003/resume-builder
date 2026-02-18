@@ -14,7 +14,7 @@
     colorlinks=true,
     linkcolor=black,
     filecolor=magenta,      
-    urlcolor=black,
+    urlcolor=blue,
 }
 
 % --- Custom Section Title ---
@@ -25,13 +25,13 @@
 % --- Macros for Experience Headers ---
 \newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=*, label={}]}
 \newcommand{\resumeEntryEnd}{\end{itemize}}
-\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeItem}[1]{\item{#1 \vspace{-2pt}}}
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textit{#3} & \textit{#4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -70,7 +70,7 @@
 % --- SKILLS (Simplified for now) ---
 \section{SKILLS}
 \resumeEntryStart
-    \item \small
+    \item
     \BLOCK{ for skill in skills }
         \textbf{\VAR{skill.category}:} \VAR{skill.keywords | join(', ')} \\
     \BLOCK{ endfor }
@@ -82,7 +82,7 @@
     \BLOCK{ for project in projects }
     \item
         \textbf{\VAR{project.name}} \\
-        \small \VAR{project.description} \vspace{3pt}
+        \VAR{project.description} \vspace{3pt}
     \BLOCK{ endfor }
 \resumeEntryEnd
 
@@ -94,7 +94,7 @@
       {\VAR{edu.institution}}{}
       {\VAR{edu.degree}}{\VAR{edu.completionDate}}
       \begin{itemize}[leftmargin=0.15in, label={}]
-          \item \small \VAR{edu.score.label}: \VAR{edu.score.value}
+          \item \VAR{edu.score.label}: \VAR{edu.score.value}
       \end{itemize}
     \BLOCK{ endfor }
 \resumeEntryEnd

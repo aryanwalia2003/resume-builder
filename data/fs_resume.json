@@ -15,6 +15,11 @@
       "email": "ariyanwaliya@gmail.com"
     },
     "profiles": {
+      "portfolio": {
+        "network": "Portfolio",
+        "text": "Portfolio",
+        "url": "https://aryanw.in"
+      },
       "linkedin": {
         "network": "LinkedIn",
         "text": "LinkedIn",
@@ -23,7 +28,7 @@
       "medium": {
         "network": "Medium",
         "text": "Medium",
-        "url": "MEDIUM_URL_PLACEHOLDER"
+        "url": "https://medium.com/@aryanwalia"
       }
     },
     "summary": "Backend-focused Full Stack developer building reliable, scalable systems with a strong foundation in architecture and system design."
@@ -36,19 +41,20 @@
       "startDate": "Jan 2025",
       "endDate": "Present",
       "highlights": [
-        "Built a high-concurrency appointment dispatch system for VUC using Redis atomic locks and optimized SQL transactions, achieving sub-50ms latency and eliminating race conditions under load.",
-        "Designed a scalable data ingestion architecture (500GB+ healthcare datasets) using Airflow, Iceberg, and Trino for optimized OLAP querying over compressed parquet files."
+        "Built a **high-concurrency** appointment dispatch system for VUC using Redis atomic locks and optimized SQL transactions, achieving **sub-50ms latency** and **eliminating race conditions** under load.",
+        "Designed a scalable **data ingestion architecture (500GB+)** using Airflow, Iceberg, and Trino for optimized OLAP querying over **compressed parquet files**.",
+        "Engineered a plug-and-play Identity Provider using Bun & ElysiaJS with **passwordless WebAuthn**, stateless RS256 JWT + JWKS verification, Redis-backed challenge management, and **real-time geo-aware session revocation**."
       ]
     },
     {
       "company": "CMS AND APPOINTMENT BOOKING WEBSITE",
-      "location": "Remote",
+      "location": "[Remote](https://acharyarajesh.space)",
       "position": "Freelance Full Stack Developer",
       "startDate": "Feb 2026",
       "endDate": "Present",
       "highlights": [
-        "Delivered a production-ready content management platform end-to-end under tight timelines, architecting a secure Admin Dashboard that streamlined the publishing workflow and enabled management of 10,000+ content pieces at launch.",
-        "Built an automated GenAI pipeline for real-time vernacular translation and structured metadata extraction, reducing manual editorial effort by ~90% and significantly accelerating global content rollout."
+        "Delivered a **production-ready content management platform** end-to-end under tight timelines, architecting a secure Admin Dashboard that streamlined the publishing workflow and enabled management of **10,000+ content pieces** at launch.",
+        "Built an automated GenAI pipeline for **real-time vernacular translation** and structured metadata extraction, **reducing manual editorial effort by 90%** and significantly accelerating global content rollout."
       ]
     },
     {
@@ -58,8 +64,8 @@
       "startDate": "Oct 2025",
       "endDate": "Nov 2025",
       "highlights": [
-        "Built a scalable, multi-tenant ticketing system with RBAC and automated assignment using Node.js, Express, MongoDB, Redis, BullMQ, serving 200–250 users across 5+ teams.",
-        "Engineered a real-time notification and messaging pipeline using Redis Pub/Sub, Socket.io, PostgreSQL, handling 10k+ concurrent requests/min with horizontal scalability."
+        "Built a **scalable, multi-tenant ticketing system** with RBAC and automated assignment using Node.js, Express, MongoDB, Redis, BullMQ, serving **200–250 users across 5+ teams**.",
+        "Engineered a **real-time notification and messaging pipeline** using Redis Pub/Sub, Socket.io, PostgreSQL, handling **10k+ concurrent requests/min** with horizontal scalability."
       ]
     }
   ],
@@ -139,15 +145,19 @@
   "projects": [
     {
       "name": "System Design Articles",
-      "description": "Articles talking about system design of real-time video conferencing apps like Zoom, rate limiters, and design patterns like the transaction outbox pattern."
+      "description": "Articles talking about system design of [real-time video conferencing apps](https://medium.com/@ariyanwaliya/video-calling-platform-system-design-zoom-c94a48cca205) like Zoom, [rate limiters](https://medium.com/@ariyanwaliya/from-fairness-to-security-building-a-rate-limiter-a3623c4828de), [flash sale problem](https://medium.com/@ariyanwaliya/50-iphones-100k-users-and-one-very-angry-database-designing-flash-sales-5a5c3a1cd8b0), [designing modern dashboards](https://medium.com/@ariyanwaliya/intent-queries-and-subscriptions-a-better-mental-model-for-analytics-uis-30b1380cd932) and much more .."
     },
     {
       "name": "Database Deep Dive Series",
-      "description": "Wrote articles talking about database discussions like OLTP vs OLAP, B Trees vs LSM trees, cockroachDB, TarantoolDB, MVCC, and much more."
+      "description": "Wrote articles talking about database discussions like [OLTP vs OLAP](https://medium.com/@ariyanwaliya/oltp-vs-olap-breaking-down-transactional-vs-analytical-systems-5a6850ddeacd), [B Trees vs LSM trees](https://medium.com/@ariyanwaliya/from-reads-to-writes-understanding-b-trees-vs-lsm-trees-8eb494415152), [CockroachDB](https://medium.com/@ariyanwaliya/inside-cockroachdb-the-engineering-behind-serializable-transactions-8d2946e2de2c), [TarantoolDB](https://medium.com/@ariyanwaliya/somewhere-between-redis-and-postgres-tarantooldb-adcc1dc6bdd4), [MVCC](https://medium.com/@ariyanwaliya/inside-postgresql-mvcc-internals-page-bloat-autovacuum-and-vacuum-full-mechanics-b63a81dcb4c9), and much more."
     },
     {
       "name": "Finetuning Llama",
       "description": "Fine-tuned the LLaMA 2 7B pretrained model using parameter-efficient techniques such as LoRA and QLoRA on an SQL dataset, following meticulous preprocessing to align the data with LLaMA's input requirements."
+    },
+    {
+      "name": "Data Engineering and AI Articles",
+      "description": "Articles that explore production grade data engineering and AI pipelines built for scale, wrote articles on [ANN algoritms at scale](https://medium.com/@ariyanwaliya/scaling-vector-search-a-practical-comparison-of-ann-techniques-972a9becb2fc), [Trino](https://medium.com/@ariyanwaliya/lessons-from-the-trenches-scaling-analytics-with-trino-17b70e1e3197) to query files on blob, [building distributed graphs at scale](https://medium.com/@ariyanwaliya/why-netflix-didnt-use-a-graph-database-building-a-real-time-distributed-graph-from-first-df194c564b3d), and much more."
     }
   ],
   "education": [
