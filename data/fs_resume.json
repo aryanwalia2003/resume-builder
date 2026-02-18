@@ -1,0 +1,164 @@
+{
+  "basics": {
+    "name": {
+      "full": "Aryan Walia",
+      "first": "Aryan",
+      "last": "Walia"
+    },
+    "contact": {
+      "phone": {
+        "display": "+91 7678531784",
+        "prefix": "+91",
+        "number": "7678531784",
+        "label": "P"
+      },
+      "email": "ariyanwaliya@gmail.com"
+    },
+    "profiles": {
+      "linkedin": {
+        "network": "LinkedIn",
+        "text": "LinkedIn",
+        "url": "https://www.linkedin.com/in/aryanw/"
+      },
+      "medium": {
+        "network": "Medium",
+        "text": "Medium",
+        "url": "MEDIUM_URL_PLACEHOLDER"
+      }
+    },
+    "summary": "Backend-focused Full Stack developer building reliable, scalable systems with a strong foundation in architecture and system design."
+  },
+  "work": [
+    {
+      "company": "E SOLUTIONS",
+      "location": "Noida, Delhi",
+      "position": "Backend Developer",
+      "startDate": "Jan 2025",
+      "endDate": "Present",
+      "highlights": [
+        "Built a high-concurrency appointment dispatch system for VUC using Redis atomic locks and optimized SQL transactions, achieving sub-50ms latency and eliminating race conditions under load.",
+        "Designed a scalable data ingestion architecture (500GB+ healthcare datasets) using Airflow, Iceberg, and Trino for optimized OLAP querying over compressed parquet files."
+      ]
+    },
+    {
+      "company": "CMS AND APPOINTMENT BOOKING WEBSITE",
+      "location": "Remote",
+      "position": "Freelance Full Stack Developer",
+      "startDate": "Feb 2026",
+      "endDate": "Present",
+      "highlights": [
+        "Delivered a production-ready content management platform end-to-end under tight timelines, architecting a secure Admin Dashboard that streamlined the publishing workflow and enabled management of 10,000+ content pieces at launch.",
+        "Built an automated GenAI pipeline for real-time vernacular translation and structured metadata extraction, reducing manual editorial effort by ~90% and significantly accelerating global content rollout."
+      ]
+    },
+    {
+      "company": "TICKETING AND SUPPORT SYSTEM",
+      "location": "Remote",
+      "position": "Freelance Backend Developer",
+      "startDate": "Oct 2025",
+      "endDate": "Nov 2025",
+      "highlights": [
+        "Built a scalable, multi-tenant ticketing system with RBAC and automated assignment using Node.js, Express, MongoDB, Redis, BullMQ, serving 200–250 users across 5+ teams.",
+        "Engineered a real-time notification and messaging pipeline using Redis Pub/Sub, Socket.io, PostgreSQL, handling 10k+ concurrent requests/min with horizontal scalability."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Backend Development",
+      "keywords": [
+        "Node.js",
+        "Django",
+        "REST APIs",
+        "Microservices",
+        "Event-Driven Architecture"
+      ]
+    },
+    {
+      "category": "Frontend Development",
+      "keywords": [
+        "React",
+        "Next.js"
+      ]
+    },
+    {
+      "category": "Databases",
+      "keywords": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Tarantool"
+      ]
+    },
+    {
+      "category": "Infrastructure & DevOps",
+      "keywords": [
+        "Docker",
+        "Nginx",
+        "CI/CD"
+      ]
+    },
+    {
+      "category": "Observability",
+      "keywords": [
+        "Pino",
+        "Grafana",
+        "Prometheus"
+      ]
+    },
+    {
+      "category": "Languages",
+      "keywords": [
+        "Python",
+        "JavaScript",
+        "TypeScript"
+      ]
+    },
+    {
+      "category": "Batch And Stream Processing",
+      "keywords": [
+        "Kafka",
+        "Spark",
+        "Flink"
+      ]
+    },
+    {
+      "category": "AI/ML (Additional)",
+      "keywords": [
+        "Generative AI",
+        "NLP",
+        "LLM Fine-Tuning (LLaMA, OpenAI)",
+        "OCR",
+        "LangChain",
+        "LangGraph",
+        "LangSmith"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "System Design Articles",
+      "description": "Articles talking about system design of real-time video conferencing apps like Zoom, rate limiters, and design patterns like the transaction outbox pattern."
+    },
+    {
+      "name": "Database Deep Dive Series",
+      "description": "Wrote articles talking about database discussions like OLTP vs OLAP, B Trees vs LSM trees, cockroachDB, TarantoolDB, MVCC, and much more."
+    },
+    {
+      "name": "Finetuning Llama",
+      "description": "Fine-tuned the LLaMA 2 7B pretrained model using parameter-efficient techniques such as LoRA and QLoRA on an SQL dataset, following meticulous preprocessing to align the data with LLaMA's input requirements."
+    }
+  ],
+  "education": [
+    {
+      "institution": "GURU GOBIND SINGH INDRAPRASTHA UNIVERSITY (GGSIPU)",
+      "degree": "Bachelor of Technology",
+      "completionDate": "June 2025",
+      "score": {
+        "label": "Cumulative CGPA",
+        "value": "8.5"
+      }
+    }
+  ]
+}

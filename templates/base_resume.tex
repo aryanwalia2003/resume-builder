@@ -1,0 +1,102 @@
+\documentclass[a4paper,10pt]{article}
+
+% --- Packages ---
+\usepackage[left=0.5in, top=0.4in, right=0.5in, bottom=0.4in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% --- Formatting ---
+\pagestyle{empty} % No page numbers
+\raggedright      % Left align
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=black,
+}
+
+% --- Custom Section Title ---
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% --- Macros for Experience Headers ---
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=*, label={}]}
+\newcommand{\resumeEntryEnd}{\end{itemize}}
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    \textbf{\Huge \VAR{basics.name.full}} \\ \vspace{4pt}
+    \small \VAR{basics.contact.phone.display} $|$ 
+    \href{mailto:\VAR{basics.contact.email}}{\VAR{basics.contact.email}} $|$ 
+    \BLOCK{ for profile in basics.profiles.values() }
+        \href{\VAR{profile.url}}{\VAR{profile.network}} \BLOCK{ if not loop.last } $|$ \BLOCK{ endif }
+    \BLOCK{ endfor }
+\end{center}
+
+\vspace{-10pt}
+\begin{center}
+    \small \VAR{basics.summary}
+\end{center}
+
+% --- EXPERIENCE ---
+\section{WORK EXPERIENCE}
+\resumeEntryStart
+    \BLOCK{ for job in work }
+    \resumeSubheading
+      {\VAR{job.company}}{\VAR{job.location}}
+      {\VAR{job.position}}{\VAR{job.startDate} -- \VAR{job.endDate}}
+      \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
+        \BLOCK{ for highlight in job.highlights }
+        \resumeItem{\VAR{highlight}}
+        \BLOCK{ endfor }
+      \end{itemize}
+    \BLOCK{ endfor }
+\resumeEntryEnd
+
+% --- SKILLS (Simplified for now) ---
+\section{SKILLS}
+\resumeEntryStart
+    \item \small
+    \BLOCK{ for skill in skills }
+        \textbf{\VAR{skill.category}:} \VAR{skill.keywords | join(', ')} \\
+    \BLOCK{ endfor }
+\resumeEntryEnd
+
+% --- PROJECTS ---
+\section{PERSONAL PROJECTS}
+\resumeEntryStart
+    \BLOCK{ for project in projects }
+    \item
+        \textbf{\VAR{project.name}} \\
+        \small \VAR{project.description} \vspace{3pt}
+    \BLOCK{ endfor }
+\resumeEntryEnd
+
+% --- EDUCATION ---
+\section{EDUCATION}
+\resumeEntryStart
+    \BLOCK{ for edu in education }
+    \resumeSubheading
+      {\VAR{edu.institution}}{}
+      {\VAR{edu.degree}}{\VAR{edu.completionDate}}
+      \begin{itemize}[leftmargin=0.15in, label={}]
+          \item \small \VAR{edu.score.label}: \VAR{edu.score.value}
+      \end{itemize}
+    \BLOCK{ endfor }
+\resumeEntryEnd
+
+\end{document}

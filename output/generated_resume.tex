@@ -1,0 +1,117 @@
+\documentclass[a4paper,10pt]{article}
+
+% --- Packages ---
+\usepackage[left=0.5in, top=0.4in, right=0.5in, bottom=0.4in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% --- Formatting ---
+\pagestyle{empty} % No page numbers
+\raggedright      % Left align
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=black,
+}
+
+% --- Custom Section Title ---
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% --- Macros for Experience Headers ---
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=*, label={}]}
+\newcommand{\resumeEntryEnd}{\end{itemize}}
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    \textbf{\Huge Aryan Walia} \\ \vspace{4pt}
+    \small +91 7678531784 $|$ 
+    \href{mailto:ariyanwaliya@gmail.com}{ariyanwaliya@gmail.com} $|$ 
+            \href{LINKEDIN\_URL\_PLACEHOLDER}{LinkedIn}  $|$             \href{MEDIUM\_URL\_PLACEHOLDER}{Medium}     \end{center}
+
+\vspace{-10pt}
+\begin{center}
+    \small Backend-focused Full Stack developer building reliable, scalable systems with a strong foundation in architecture and system design.
+\end{center}
+
+% --- EXPERIENCE ---
+\section{WORK EXPERIENCE}
+\resumeEntryStart
+        \resumeSubheading
+      {E SOLUTIONS}{Noida, Delhi}
+      {Backend Developer}{Jan 2025 -- Present}
+      \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
+                \resumeItem{Built a high-concurrency appointment dispatch system for VUC using Redis atomic locks and optimized SQL transactions, achieving sub-50ms latency and eliminating race conditions under load.}
+                \resumeItem{Designed a scalable data ingestion architecture (500GB+ healthcare datasets) using Airflow, Iceberg, and Trino for optimized OLAP querying over compressed parquet files.}
+              \end{itemize}
+        \resumeSubheading
+      {CMS AND APPOINTMENT BOOKING WEBSITE}{Remote}
+      {Freelance Full Stack Developer}{Feb 2026 -- Present}
+      \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
+                \resumeItem{Delivered a production-ready content management platform end-to-end under tight timelines, architecting a secure Admin Dashboard that streamlined the publishing workflow and enabled management of 10,000+ content pieces at launch.}
+                \resumeItem{Built an automated GenAI pipeline for real-time vernacular translation and structured metadata extraction, reducing manual editorial effort by \textasciitilde{}90\% and significantly accelerating global content rollout.}
+              \end{itemize}
+        \resumeSubheading
+      {TICKETING AND SUPPORT SYSTEM}{Remote}
+      {Freelance Backend Developer}{Oct 2025 -- Nov 2025}
+      \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
+                \resumeItem{Built a scalable, multi-tenant ticketing system with RBAC and automated assignment using Node.js, Express, MongoDB, Redis, BullMQ, serving 200–250 users across 5+ teams.}
+                \resumeItem{Engineered a real-time notification and messaging pipeline using Redis Pub/Sub, Socket.io, PostgreSQL, handling 10k+ concurrent requests/min with horizontal scalability.}
+              \end{itemize}
+    \resumeEntryEnd
+
+% --- SKILLS (Simplified for now) ---
+\section{SKILLS}
+\resumeEntryStart
+    \item \small
+            \textbf{Backend Development:} Node.js, Django, REST APIs, Microservices, Event-Driven Architecture \\
+            \textbf{Frontend Development:} React, Next.js \\
+            \textbf{Databases:} PostgreSQL, MySQL, MongoDB, Redis, Tarantool \\
+            \textbf{Infrastructure \& DevOps:} Docker, Nginx, CI/CD \\
+            \textbf{Observability:} Pino, Grafana, Prometheus \\
+            \textbf{Languages:} Python, JavaScript, TypeScript \\
+            \textbf{Batch And Stream Processing:} Kafka, Spark, Flink \\
+            \textbf{AI/ML (Additional):} Generative AI, NLP, LLM Fine-Tuning (LLaMA, OpenAI), OCR, LangChain, LangGraph, LangSmith \\
+    \resumeEntryEnd
+
+% --- PROJECTS ---
+\section{PERSONAL PROJECTS}
+\resumeEntryStart
+        \item
+        \textbf{System Design Articles} \\
+        \small Articles talking about system design of real-time video conferencing apps like Zoom, rate limiters, and design patterns like the transaction outbox pattern. \vspace{3pt}
+        \item
+        \textbf{Database Deep Dive Series} \\
+        \small Wrote articles talking about database discussions like OLTP vs OLAP, B Trees vs LSM trees, cockroachDB, TarantoolDB, MVCC, and much more. \vspace{3pt}
+        \item
+        \textbf{Finetuning Llama} \\
+        \small Fine-tuned the LLaMA 2 7B pretrained model using parameter-efficient techniques such as LoRA and QLoRA on an SQL dataset, following meticulous preprocessing to align the data with LLaMA's input requirements. \vspace{3pt}
+    \resumeEntryEnd
+
+% --- EDUCATION ---
+\section{EDUCATION}
+\resumeEntryStart
+        \resumeSubheading
+      {GURU GOBIND SINGH INDRAPRASTHA UNIVERSITY (GGSIPU)}{}
+      {Bachelor of Technology}{June 2025}
+      \begin{itemize}[leftmargin=0.15in, label={}]
+          \item \small Cumulative CGPA: 8.5
+      \end{itemize}
+    \resumeEntryEnd
+
+\end{document}

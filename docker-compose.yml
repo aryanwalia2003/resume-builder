@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  builder:
+    build: .
+    image: resume_builder_v1
+    container_name: resume_backend
+    
+    # MOUNT VOLUMES
+    # Maps your laptop folders (left) to container folders (right)
+    volumes:
+      - ./data:/app/data
+      - ./templates:/app/templates
+      - ./output:/app/output
+      - ./src:/app/src
+      - ./scripts:/app/scripts
+    
+    # RUN HEALTH CHECK ON STARTUP
+    command: ["/bin/bash", "/app/scripts/health_check.sh"]
