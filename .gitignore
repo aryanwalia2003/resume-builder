@@ -12,4 +12,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-data/*
+data/*.json
+output/*.pdf
+output/*.tex
+output/*.log
+
+# Google Drive auth — never commit these
+auth/credentials.json
+auth/token.json

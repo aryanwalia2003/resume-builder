@@ -1,0 +1,194 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "resume.schema.json",
+  "title": "Resume",
+  "description": "Schema for a role-targeted resume JSON file used by the resume-editor pipeline.",
+  "type": "object",
+  "required": ["meta", "basics", "work", "skills", "projects", "education"],
+  "additionalProperties": true,
+
+  "properties": {
+
+    "meta": {
+      "type": "object",
+      "description": "Pipeline metadata for the resume variant.",
+      "required": ["code"],
+      "additionalProperties": true,
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Short uppercase code used in the output filename, e.g. 'BE' or 'FS'."
+        },
+        "target_keywords": {
+          "type": "array",
+          "description": "Optional list of keywords to check for keyword density (Phase 4).",
+          "items": { "type": "string" }
+        },
+        "section_order": {
+          "type": "array",
+          "description": "Optional override for section rendering order (Phase 3).",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "basics": {
+      "type": "object",
+      "description": "Personal and contact information.",
+      "required": ["name", "contact"],
+      "additionalProperties": true,
+      "properties": {
+
+        "name": {
+          "type": "object",
+          "required": ["full"],
+          "additionalProperties": true,
+          "properties": {
+            "full":  { "type": "string", "minLength": 1 },
+            "first": { "type": "string" },
+            "last":  { "type": "string" }
+          }
+        },
+
+        "contact": {
+          "type": "object",
+          "required": ["email"],
+          "additionalProperties": true,
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "Primary contact email."
+            },
+            "phone": {
+              "type": "object",
+              "required": ["display"],
+              "additionalProperties": true,
+              "properties": {
+                "display": { "type": "string", "minLength": 1 },
+                "prefix":  { "type": "string" },
+                "number":  { "type": "string" },
+                "label":   { "type": "string" }
+              }
+            }
+          }
+        },
+
+        "summary": {
+          "type": "string",
+          "description": "Optional one-line professional summary shown below the header.",
+          "minLength": 1
+        },
+
+        "profiles": {
+          "type": "object",
+          "description": "Optional map of social/professional profiles (portfolio, linkedin, github, etc.).",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["network", "url"],
+            "additionalProperties": true,
+            "properties": {
+              "network": { "type": "string", "minLength": 1 },
+              "text":    { "type": "string" },
+              "url":     { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+
+    "work": {
+      "type": "array",
+      "description": "Work experience entries in reverse chronological order.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["company", "position", "startDate", "endDate", "highlights"],
+        "additionalProperties": true,
+        "properties": {
+          "company":   { "type": "string", "minLength": 1 },
+          "position":  { "type": "string", "minLength": 1 },
+          "location":  { "type": "string" },
+          "startDate": {
+            "type": "string",
+            "minLength": 1,
+            "description": "e.g. 'Jan 2025'"
+          },
+          "endDate": {
+            "type": "string",
+            "minLength": 1,
+            "description": "e.g. 'Dec 2025' or 'Present'"
+          },
+          "highlights": {
+            "type": "array",
+            "minItems": 1,
+            "description": "Bullet points. Supports **bold** and [text](url) Markdown.",
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+
+    "skills": {
+      "type": "array",
+      "description": "Skill categories with keyword lists.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["category", "keywords"],
+        "additionalProperties": true,
+        "properties": {
+          "category": { "type": "string", "minLength": 1 },
+          "keywords": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+
+    "projects": {
+      "type": "array",
+      "description": "Personal or open-source projects.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "description"],
+        "additionalProperties": true,
+        "properties": {
+          "name":        { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "url":         { "type": "string" }
+        }
+      }
+    },
+
+    "education": {
+      "type": "array",
+      "description": "Educational qualifications.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["institution", "degree", "completionDate"],
+        "additionalProperties": true,
+        "properties": {
+          "institution":    { "type": "string", "minLength": 1 },
+          "degree":         { "type": "string", "minLength": 1 },
+          "completionDate": { "type": "string", "minLength": 1 },
+          "score": {
+            "type": "object",
+            "required": ["label", "value"],
+            "additionalProperties": true,
+            "properties": {
+              "label": { "type": "string", "minLength": 1 },
+              "value": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

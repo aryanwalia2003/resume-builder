@@ -40,24 +40,31 @@
 % --- HEADER ---
 \begin{center}
     \textbf{\Huge \VAR{basics.name.full}} \\ \vspace{4pt}
-    \small \VAR{basics.contact.phone.display} $|$ 
-    \href{mailto:\VAR{basics.contact.email}}{\VAR{basics.contact.email}} $|$ 
-    \BLOCK{ for profile in basics.profiles.values() }
-        \href{\VAR{profile.url}}{\VAR{profile.network}} \BLOCK{ if not loop.last } $|$ \BLOCK{ endif }
-    \BLOCK{ endfor }
+    \small
+    \BLOCK{ if basics.contact.phone is defined and basics.contact.phone }
+        \VAR{basics.contact.phone.display} $|$
+    \BLOCK{ endif }
+    \href{mailto:\VAR{basics.contact.email}}{\VAR{basics.contact.email}}
+    \BLOCK{ if basics.profiles is defined and basics.profiles }
+        \BLOCK{ for profile in basics.profiles.values() }
+            $|$ \href{\VAR{profile.url}}{\VAR{profile.network}}
+        \BLOCK{ endfor }
+    \BLOCK{ endif }
 \end{center}
 
+\BLOCK{ if basics.summary is defined and basics.summary }
 \vspace{-10pt}
 \begin{center}
     \small \VAR{basics.summary}
 \end{center}
+\BLOCK{ endif }
 
 % --- EXPERIENCE ---
 \section{WORK EXPERIENCE}
 \resumeEntryStart
     \BLOCK{ for job in work }
     \resumeSubheading
-      {\VAR{job.company}}{\VAR{job.location}}
+      {\VAR{job.company}}{\VAR{job.location if job.location is defined else ''}}
       {\VAR{job.position}}{\VAR{job.startDate} -- \VAR{job.endDate}}
       \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
         \BLOCK{ for highlight in job.highlights }
@@ -67,7 +74,7 @@
     \BLOCK{ endfor }
 \resumeEntryEnd
 
-% --- SKILLS (Simplified for now) ---
+% --- SKILLS ---
 \section{SKILLS}
 \resumeEntryStart
     \item
@@ -93,9 +100,11 @@
     \resumeSubheading
       {\VAR{edu.institution}}{}
       {\VAR{edu.degree}}{\VAR{edu.completionDate}}
+      \BLOCK{ if edu.score is defined and edu.score }
       \begin{itemize}[leftmargin=0.15in, label={}]
           \item \VAR{edu.score.label}: \VAR{edu.score.value}
       \end{itemize}
+      \BLOCK{ endif }
     \BLOCK{ endfor }
 \resumeEntryEnd
 
