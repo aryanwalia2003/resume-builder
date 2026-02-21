@@ -11,9 +11,18 @@ class Config:
         return cls._instance
 
     def _initialize(self):
+        # Load environment variables
+        from dotenv import load_dotenv
+        load_dotenv()
+
         # Base directory is the parent of the src directory
         self.BASE_DIR = Path(__file__).resolve().parent.parent
         self.DATA_DIR = self.BASE_DIR / 'data'
+        
+        # Database Config
+        self.ENV = os.getenv("ENV", "local")
+        self.DB_URI = os.getenv("MONGODB_URI", "mongodb://localhost:27017/resume_builder")
+
         self.TEMPLATE_DIR = self.BASE_DIR / 'templates'
         self.OUTPUT_DIR = self.BASE_DIR / 'output'
 
