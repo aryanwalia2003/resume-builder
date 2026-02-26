@@ -26,16 +26,16 @@ class Database:
         # Connect with serverSelectionTimeoutMS so it fails fast if local DB isn't running
         cls._client = MongoClient(uri, serverSelectionTimeoutMS=2000)
         
-        # Extract database name from URI, defaulting to 'resume_builder'
+        # Extract database name from URI, defaulting to 'resume-builder'
         db_name = uri.split("/")[-1].split("?")[0]
         if not db_name:
-            db_name = "resume_builder"
+            db_name = "resume-builder"
             
         cls._db = cls._client[db_name]
         
         # Ping to verify connection
         cls._client.admin.command('ping')
-        print("✓ Successfully connected to MongoDB.")
+        print("Successfully connected to MongoDB.")
 
     @classmethod
     def get_db(cls) -> MongoDatabase:

@@ -60,7 +60,7 @@ def main():
         if name in applied_names:
             continue
             
-        print(f"\n→ Running migration: {name}")
+        print(f"\n-> Running migration: {name}")
         try:
             mod = load_module(file_path)
             # Each script must have an 'up(db)' function
@@ -74,11 +74,11 @@ def main():
                 "name": name,
                 "applied_at": datetime.utcnow()
             })
-            print(f"✓ Migration {name} successful.")
+            print(f"SUCCESS: Migration {name} successful.")
             run_count += 1
             
         except Exception as e:
-            print(f"✗ Migration {name} FAILED: {e}")
+            print(f"ERROR: Migration {name} FAILED: {e}")
             sys.exit(1)
             
     if run_count == 0:

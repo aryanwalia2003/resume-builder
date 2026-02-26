@@ -2,7 +2,6 @@
 Migration 001: Initial Schema & Indexes
 ---------------------------------------
 Creates the necessary indexes for the 5 core collections
-implementing Option A (microservice decoupled uploads).
 """
 
 from pymongo.database import Database
@@ -28,13 +27,13 @@ def up(db: Database):
     # For querying a user's active resumes quickly.
     db.resumes.create_index([
         ("user_id", pymongo.ASCENDING),
-        ("updated_at", pymongo.DESCENDING)
+        ("updatedAt", pymongo.DESCENDING)
     ])
     
     # 3. ResumeVersions (Time Machine Snapshot)
     # ----------------------------------------
     # Ensure no duplicate versions exist for the same resume.
-    db.resume_versions.create_index([
+    db.resumeversions.create_index([
         ("resume_id", pymongo.ASCENDING),
         ("version_number", pymongo.DESCENDING)
     ], unique=True)
@@ -44,9 +43,15 @@ def up(db: Database):
     # Quick lookup for recent builds per resume.
     db.generations.create_index([
         ("resume_id", pymongo.ASCENDING),
-        ("created_at", pymongo.DESCENDING)
+        ("createdAt", pymongo.DESCENDING)
     ])
     
+    # Index for engine: find oldest PENDING job on startup sweep
+    db.generations.create_index([
+        ("status", pymongo.ASCENDING),
+        ("createdAt", pymongo.ASCENDING)
+    ])
+
     # 5. Uploads (Drive sync jobs)
     # -----------------------------
     # Each PDF generation has exactly one Drive upload job.

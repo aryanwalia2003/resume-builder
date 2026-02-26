@@ -8,6 +8,8 @@ services:
     
     env_file:
       - .env
+    environment:
+      - MONGODB_URI=mongodb://host.docker.internal:27017/resume-builder?directConnection=true
 
     # MOUNT VOLUMES
     # Maps your laptop folders (left) to container folders (right)
@@ -20,21 +22,6 @@ services:
       - ./schema:/app/schema
       - ./tests:/app/tests
       - ./auth:/app/auth
-      - ./migrations:/app/migrations
-    
-    depends_on:
-      - mongodb
+    # RUN WORKER INSTEAD OF HEALTH CHECK
+    command: ["python", "-u", "-m", "src.worker"]
 
-    # RUN HEALTH CHECK ON STARTUP
-    command: ["/bin/bash", "/app/scripts/health_check.sh"]
-
-  mongodb:
-    image: mongo:6.0
-    container_name: resume_mongodb
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-
-volumes:
-  mongo_data:

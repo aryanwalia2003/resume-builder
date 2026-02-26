@@ -27,9 +27,13 @@ class ResumeGenerator:
         with open(json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        # 2. Sanitize JSON
+        return self.generate_tex_from_data(data, template_name)
+
+    def generate_tex_from_data(self, data: dict, template_name: str = "base_resume.tex") -> str:
+        """Render LaTeX from an in-memory resume_data dict."""
+        # 1. Sanitize JSON
         sanitized_data = LatexSanitizer.sanitize_payload(data)
 
-        # 3. Render Template
+        # 2. Render Template
         template = self.env.get_template(template_name)
         return template.render(**sanitized_data)
